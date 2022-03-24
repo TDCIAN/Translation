@@ -10,9 +10,11 @@
 		1E1A69C027EC61E0004D8EB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A69BF27EC61E0004D8EB6 /* AppDelegate.swift */; };
 		1E1A69C227EC61E0004D8EB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A69C127EC61E0004D8EB6 /* SceneDelegate.swift */; };
 		1E1A69C427EC61E0004D8EB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1A69C327EC61E0004D8EB6 /* ViewController.swift */; };
-		1E1A69C727EC61E0004D8EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1A69C527EC61E0004D8EB6 /* Main.storyboard */; };
 		1E1A69C927EC61E2004D8EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1A69C827EC61E2004D8EB6 /* Assets.xcassets */; };
 		1E1A69CC27EC61E2004D8EB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1A69CA27EC61E2004D8EB6 /* LaunchScreen.storyboard */; };
+		1E1A69D527EC6289004D8EB6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1A69D427EC6289004D8EB6 /* SnapKit */; };
+		1E1A69D827EC6296004D8EB6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1E1A69D727EC6296004D8EB6 /* Alamofire */; };
+		1E1A69DA27EC62A9004D8EB6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1E1A69D927EC62A9004D8EB6 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +22,10 @@
 		1E1A69BF27EC61E0004D8EB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E1A69C127EC61E0004D8EB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1E1A69C327EC61E0004D8EB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1E1A69C627EC61E0004D8EB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E1A69C827EC61E2004D8EB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E1A69CB27EC61E2004D8EB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E1A69CD27EC61E2004D8EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E1A69D927EC62A9004D8EB6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1A69D527EC6289004D8EB6 /* SnapKit in Frameworks */,
+				1E1A69D827EC6296004D8EB6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 		1E1A69B327EC61E0004D8EB6 = {
 			isa = PBXGroup;
 			children = (
+				1E1A69D927EC62A9004D8EB6 /* .swiftlint.yml */,
 				1E1A69BE27EC61E0004D8EB6 /* Translation */,
 				1E1A69BD27EC61E0004D8EB6 /* Products */,
 			);
@@ -59,7 +64,6 @@
 				1E1A69BF27EC61E0004D8EB6 /* AppDelegate.swift */,
 				1E1A69C127EC61E0004D8EB6 /* SceneDelegate.swift */,
 				1E1A69C327EC61E0004D8EB6 /* ViewController.swift */,
-				1E1A69C527EC61E0004D8EB6 /* Main.storyboard */,
 				1E1A69C827EC61E2004D8EB6 /* Assets.xcassets */,
 				1E1A69CA27EC61E2004D8EB6 /* LaunchScreen.storyboard */,
 				1E1A69CD27EC61E2004D8EB6 /* Info.plist */,
@@ -77,12 +81,17 @@
 				1E1A69B827EC61E0004D8EB6 /* Sources */,
 				1E1A69B927EC61E0004D8EB6 /* Frameworks */,
 				1E1A69BA27EC61E0004D8EB6 /* Resources */,
+				1E1A69DB27EC62D6004D8EB6 /* Swift Lint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Translation;
+			packageProductDependencies = (
+				1E1A69D427EC6289004D8EB6 /* SnapKit */,
+				1E1A69D727EC6296004D8EB6 /* Alamofire */,
+			);
 			productName = Translation;
 			productReference = 1E1A69BC27EC61E0004D8EB6 /* Translation.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +120,10 @@
 				Base,
 			);
 			mainGroup = 1E1A69B327EC61E0004D8EB6;
+			packageReferences = (
+				1E1A69D327EC6289004D8EB6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1E1A69D627EC6296004D8EB6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 1E1A69BD27EC61E0004D8EB6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,13 +138,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E1A69DA27EC62A9004D8EB6 /* .swiftlint.yml in Resources */,
 				1E1A69CC27EC61E2004D8EB6 /* LaunchScreen.storyboard in Resources */,
 				1E1A69C927EC61E2004D8EB6 /* Assets.xcassets in Resources */,
-				1E1A69C727EC61E0004D8EB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E1A69DB27EC62D6004D8EB6 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1E1A69B827EC61E0004D8EB6 /* Sources */ = {
@@ -147,14 +181,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1E1A69C527EC61E0004D8EB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1E1A69C627EC61E0004D8EB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1E1A69CA27EC61E2004D8EB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -217,7 +243,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -294,7 +320,7 @@
 				INFOPLIST_FILE = Translation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +348,7 @@
 				INFOPLIST_FILE = Translation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +386,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E1A69D327EC6289004D8EB6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+		1E1A69D627EC6296004D8EB6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1E1A69D427EC6289004D8EB6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E1A69D327EC6289004D8EB6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1E1A69D727EC6296004D8EB6 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E1A69D627EC6296004D8EB6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E1A69B427EC61E0004D8EB6 /* Project object */;
 }
