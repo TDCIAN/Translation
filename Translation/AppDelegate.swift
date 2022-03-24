@@ -14,11 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        if #available(iOS 15, *) {
+            let appearance = UITabBarAppearance()
+            let tabBar = UITabBar()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .secondarySystemBackground
+            tabBar.standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
         return true
     }
 
     // MARK: UISceneSession Lifecycle
-
     func application(
         _ application: UIApplication,
         configurationForConnecting connectingSceneSession: UISceneSession,
