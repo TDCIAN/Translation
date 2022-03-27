@@ -9,23 +9,34 @@ import UIKit
 import SnapKit
 
 final class TranslateViewController: UIViewController {
+    
+    enum `Type` {
+        case source
+        case target
+    }
+    
+    private var sourceLanguage: Language = .ko
+    private var targetLanguage: Language = .en
+    
     private lazy var sourceLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("한국어", for: .normal)
+        button.setTitle(sourceLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .systemBackground
         button.layer.cornerRadius = 9.0
+        button.addTarget(self, action: #selector(didTapSourceLanguageButton), for: .touchUpInside)
         return button
     }()
     
     private lazy var targetLanguageButton: UIButton = {
         let button = UIButton()
-        button.setTitle("영어", for: .normal)
+        button.setTitle(targetLanguage.title, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15.0, weight: .semibold)
         button.setTitleColor(.label, for: .normal)
         button.backgroundColor = .systemBackground
         button.layer.cornerRadius = 9.0
+        button.addTarget(self, action: #selector(didTapTargetLanguageButton), for: .touchUpInside)
         return button
     }()
     
@@ -56,8 +67,29 @@ final class TranslateViewController: UIViewController {
     private lazy var bookmarkButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        button.addTarget(self, action: #selector(didTapBookmarkButton), for: .touchUpInside)
         return button
     }()
+    
+    @objc func didTapBookmarkButton() {
+        guard
+            let sourceText = sourceLabel.text,
+            let translatedText = resultLabel.text,
+            bookmarkButton.imageView?.image == UIImage(systemName: "bookmark")
+        else { return }
+        
+        bookmarkButton.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        
+        let currentBookmarks: [Bookmark] = UserDefaults.standard.bookmarks
+        let newBookmark = Bookmark(
+            sourceLanguage: sourceLanguage,
+            translatedLanguage: targetLanguage,
+            sourceText: sourceText,
+            translatedText: translatedText
+        )
+        UserDefaults.standard.bookmarks = [newBookmark] + currentBookmarks
+        print("새 북마크: \(UserDefaults.standard.bookmarks)")
+    }
     
     private lazy var copyButton: UIButton = {
         let button = UIButton()
@@ -86,6 +118,11 @@ final class TranslateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -160,5 +197,33 @@ private extension TranslateViewController {
     @objc func didTapSourceLabelBaseButton() {
         let viewController = SourceTextViewController(delegate: self)
         present(viewController, animated: true)
+    }
+    
+    @objc func didTapSourceLanguageButton() {
+        didTapLanguageButton(type: .source)
+    }
+    
+    @objc func didTapTargetLanguageButton() {
+        didTapLanguageButton(type: .target)
+    }
+    
+    func didTapLanguageButton(type: Type) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        Language.allCases.forEach { language in
+            let action = UIAlertAction(title: language.title, style: .default) { [weak self] _ in
+                switch type {
+                case .source:
+                    self?.sourceLanguage = language
+                    self?.sourceLanguageButton.setTitle(language.title, for: .normal)
+                case .target:
+                    self?.targetLanguage = language
+                    self?.targetLanguageButton.setTitle(language.title, for: .normal)
+                }
+            }
+            alertController.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 }
