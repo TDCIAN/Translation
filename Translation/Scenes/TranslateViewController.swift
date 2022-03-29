@@ -94,6 +94,7 @@ final class TranslateViewController: UIViewController {
     private lazy var copyButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "doc.on.doc"), for: .normal)
+        button.addTarget(self, action: #selector(didTapCopyButton), for: .touchUpInside)
         return button
     }()
     
@@ -133,6 +134,8 @@ extension TranslateViewController: SourceTextViewControllerDelegate {
         }
         sourceLabel.text = sourceText
         sourceLabel.textColor = .label
+        
+        bookmarkButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
 }
 
@@ -225,5 +228,9 @@ private extension TranslateViewController {
         let cancelAction = UIAlertAction(title: "취소하기", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
+    }
+    
+    @objc func didTapCopyButton() {
+        UIPasteboard.general.string = resultLabel.text
     }
 }
