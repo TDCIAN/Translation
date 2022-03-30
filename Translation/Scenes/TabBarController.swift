@@ -14,9 +14,9 @@ enum TabBarItem: CaseIterable {
     var title: String {
         switch self {
         case .translate:
-            return "번역"
+            return NSLocalizedString("Translate", comment: "번역")
         case .bookmark:
-            return "즐겨찾기"
+            return NSLocalizedString("Bookmark", comment: "즐겨찾기")
         }
     }
     

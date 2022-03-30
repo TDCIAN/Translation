@@ -15,7 +15,7 @@ protocol SourceTextViewControllerDelegate: AnyObject {
 final class SourceTextViewController: UIViewController {
     private weak var delegate: SourceTextViewControllerDelegate?
     
-    private let placeHolderText = "텍스트 입력"
+    private let placeHolderText = NSLocalizedString("Enter_text", comment: "텍스트 입력")
     
     private lazy var textView: UITextView = {
         let textView = UITextView()
