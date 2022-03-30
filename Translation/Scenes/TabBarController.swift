@@ -34,7 +34,7 @@ enum TabBarItem: CaseIterable {
         case .translate:
             return UINavigationController(rootViewController: TranslateViewController())
         case .bookmark:
-            return UINavigationController(rootViewController: UIViewController())
+            return UINavigationController(rootViewController: BookmarkListViewController())
         }
     }
 }
