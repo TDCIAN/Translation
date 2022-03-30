@@ -21,6 +21,9 @@
 		1E5D1E3A27F3CC0C00709FE7 /* BookmarkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D1E3927F3CC0C00709FE7 /* BookmarkCollectionViewCell.swift */; };
 		1E5D1E3C27F3CEF700709FE7 /* BookmarkTextStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D1E3B27F3CEF700709FE7 /* BookmarkTextStackView.swift */; };
 		1E5D1E3E27F3D05800709FE7 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D1E3D27F3D05800709FE7 /* Type.swift */; };
+		1E5D1E4227F3DD0200709FE7 /* TranslateRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D1E4127F3DD0200709FE7 /* TranslateRequestModel.swift */; };
+		1E5D1E4427F3DD2B00709FE7 /* TranslateResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D1E4327F3DD2B00709FE7 /* TranslateResponseModel.swift */; };
+		1E5D1E4627F3E18000709FE7 /* TranslatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5D1E4527F3E18000709FE7 /* TranslatorManager.swift */; };
 		1E97107927F036AC0068C609 /* SourceTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97107827F036AC0068C609 /* SourceTextViewController.swift */; };
 		1E97107B27F040D80068C609 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97107A27F040D80068C609 /* Language.swift */; };
 		1E97107D27F04C5A0068C609 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E97107C27F04C5A0068C609 /* Bookmark.swift */; };
@@ -42,6 +45,9 @@
 		1E5D1E3927F3CC0C00709FE7 /* BookmarkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCollectionViewCell.swift; sourceTree = "<group>"; };
 		1E5D1E3B27F3CEF700709FE7 /* BookmarkTextStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTextStackView.swift; sourceTree = "<group>"; };
 		1E5D1E3D27F3D05800709FE7 /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		1E5D1E4127F3DD0200709FE7 /* TranslateRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateRequestModel.swift; sourceTree = "<group>"; };
+		1E5D1E4327F3DD2B00709FE7 /* TranslateResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateResponseModel.swift; sourceTree = "<group>"; };
+		1E5D1E4527F3E18000709FE7 /* TranslatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorManager.swift; sourceTree = "<group>"; };
 		1E97107827F036AC0068C609 /* SourceTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextViewController.swift; sourceTree = "<group>"; };
 		1E97107A27F040D80068C609 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		1E97107C27F04C5A0068C609 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
@@ -83,6 +89,7 @@
 			children = (
 				1E1A69BF27EC61E0004D8EB6 /* AppDelegate.swift */,
 				1E1A69C127EC61E0004D8EB6 /* SceneDelegate.swift */,
+				1E5D1E4727F3E18800709FE7 /* Managers */,
 				1E5D1E4027F3D12F00709FE7 /* Models */,
 				1E97107E27F04D960068C609 /* Extensions */,
 				1E1A69DC27EC6706004D8EB6 /* Scenes */,
@@ -128,8 +135,18 @@
 				1E97107A27F040D80068C609 /* Language.swift */,
 				1E97107C27F04C5A0068C609 /* Bookmark.swift */,
 				1E5D1E3D27F3D05800709FE7 /* Type.swift */,
+				1E5D1E4127F3DD0200709FE7 /* TranslateRequestModel.swift */,
+				1E5D1E4327F3DD2B00709FE7 /* TranslateResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1E5D1E4727F3E18800709FE7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1E5D1E4527F3E18000709FE7 /* TranslatorManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		1E97107E27F04D960068C609 /* Extensions */ = {
@@ -244,9 +261,12 @@
 			files = (
 				1E1A69C427EC61E0004D8EB6 /* TabBarController.swift in Sources */,
 				1E97108027F04DA90068C609 /* UserDefaults+.swift in Sources */,
+				1E5D1E4227F3DD0200709FE7 /* TranslateRequestModel.swift in Sources */,
 				1E1A69DE27EC6729004D8EB6 /* TranslateViewController.swift in Sources */,
 				1E97107927F036AC0068C609 /* SourceTextViewController.swift in Sources */,
 				1E97107B27F040D80068C609 /* Language.swift in Sources */,
+				1E5D1E4427F3DD2B00709FE7 /* TranslateResponseModel.swift in Sources */,
+				1E5D1E4627F3E18000709FE7 /* TranslatorManager.swift in Sources */,
 				1E1A69C027EC61E0004D8EB6 /* AppDelegate.swift in Sources */,
 				1E1A69C227EC61E0004D8EB6 /* SceneDelegate.swift in Sources */,
 				1E5D1E3E27F3D05800709FE7 /* Type.swift in Sources */,

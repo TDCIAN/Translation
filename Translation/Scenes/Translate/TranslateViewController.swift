@@ -114,6 +114,9 @@ final class TranslateViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         setupViews()
+        TranslatorManager().translate(from: "안녕하세요") {
+            print("결과: \($0)")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
